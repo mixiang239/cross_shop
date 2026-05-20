@@ -1,0 +1,11 @@
+{
+  "name": "cross_shop",
+  "version": "1.0.0",
+  "description": "CrossShop - 跨端电商应用",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@ohos/flutter_ohos": "file:./flutter_ohos"
+  }
+}
