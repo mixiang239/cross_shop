@@ -9,6 +9,8 @@ class Product {
   final int reviewCount;
   final List<String> images;
   final List<String> tags;
+  final List<ProductSku> skus;
+  final List<String> specLabels;
 
   const Product({
     required this.id,
@@ -21,6 +23,20 @@ class Product {
     this.reviewCount = 0,
     this.images = const [],
     this.tags = const [],
+    this.skus = const [],
+    this.specLabels = const [],
+  });
+}
+
+class ProductSku {
+  final String label;
+  final String value;
+  final double? priceDelta;
+
+  const ProductSku({
+    required this.label,
+    required this.value,
+    this.priceDelta,
   });
 }
 

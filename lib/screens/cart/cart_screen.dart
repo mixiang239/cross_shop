@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../providers/cart_provider.dart';
 
@@ -38,25 +39,7 @@ class _CartScreenState extends State<CartScreen>
         if (mounted) setState(() => _shaking = false);
       });
     });
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: const Row(
-          children: [
-            Icon(Icons.celebration_outlined, color: Colors.white, size: 20),
-            SizedBox(width: 8),
-            Text('订单已提交！感谢购买'),
-          ],
-        ),
-        duration: const Duration(seconds: 1),
-        behavior: SnackBarBehavior.floating,
-        margin: const EdgeInsets.fromLTRB(16, 0, 16, 80),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        backgroundColor: Colors.green.shade600,
-      ),
-    );
-    Future.delayed(const Duration(milliseconds: 600), () {
-      cart.clear();
-    });
+    context.push('/checkout');
   }
 
   @override
